@@ -10,7 +10,7 @@ async function handleRequest(request: Request): Promise<Response> {
     });
   } 
   
-  const targetUrl = `${pathname}`;
+  const targetUrl = `https://${pathname}`;
   alert(targetUrl);
   try {
     const headers = new Headers();
