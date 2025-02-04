@@ -10,8 +10,7 @@ async function handleRequest(request: Request): Promise<Response> {
     });
   } 
   
-  const targetUrl = `https://${pathname}`;
-  alert(targetUrl);
+  const targetUrl = `${pathname}`;
   try {
     const headers = new Headers();
     const allowedHeaders = ['accept', 'content-type', 'authorization'];
@@ -37,7 +36,6 @@ async function handleRequest(request: Request): Promise<Response> {
 
   } catch (error) {
     console.error('Failed to fetch:', error);
-    alert(error);
     return new Response('Internal Server Error', { status: 500 });
   }
 };
