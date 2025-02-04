@@ -10,6 +10,7 @@ async function handleRequest(request: Request): Promise<Response> {
     });
   } 
   const targetUrl = pathname.startsWith('/') ? pathname.slice(1) : pathname;
+  targetUrl = `https://${targetUrl}`;
   try {
     const headers = new Headers();
     const allowedHeaders = ['accept', 'content-type', 'authorization'];
