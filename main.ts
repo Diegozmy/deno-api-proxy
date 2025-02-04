@@ -9,8 +9,7 @@ async function handleRequest(request: Request): Promise<Response> {
       headers: { 'Content-Type': 'text/html' }
     });
   } 
-  
-  const targetUrl = `${pathname}`;
+  const targetUrl = pathname.startsWith('/') ? pathname.slice(1) : pathname;
   try {
     const headers = new Headers();
     const allowedHeaders = ['accept', 'content-type', 'authorization'];
